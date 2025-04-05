@@ -39,8 +39,10 @@
             border: none; /* Убираем стандартную рамку */
             border-radius: 5px; /* Скругленные углы */
             cursor: pointer; /* Указатель при наведении */
-            transition: background-color 0.3s; /* Плавный переход цвета фона */
+            transition: background-color 0.3s, opacity 0.5s; /* Плавный переход цвета фона и прозрачности */
             margin-top: 20px; /* Отступ сверху */
+            opacity: 0; /* Начальная непрозрачность */
+            animation: fadeInUp 0.5s forwards 1.5s; /* Анимация появления кнопки с задержкой */
         }
 
         .support-button:hover {
@@ -66,6 +68,14 @@
             display: block; /* Показываем рамку */
             opacity: 1; /* Полная непрозрачность */
         }
+
+        .copy-message {
+            margin-top: 10px; /* Отступ сверху для сообщения */
+            font-size: 18px; /* Размер шрифта */
+            color: green; /* Цвет текста сообщения */
+            display: none; /* Изначально скрыто */
+        }
+
     </style>
 </head>
 <body>
@@ -73,18 +83,29 @@
     <h1>Вы зашли на проект Iosif3</h1>
     <button class="support-button" onclick="showSupportText()">Поддержать проект</button>
 
-    <div id="supportText" class="number-box" onclick="copyToClipboard('2202 2082 8139 4628')">2202 2082 8139 4628</div>
+    <div id="supportText" class="number-box" onclick="copyToClipboard('123')">123</div>
+    <div id="copyMessage" class="copy-message">Скопировано успешно!</div>
 
     <script>
         function showSupportText() {
             var supportText = document.getElementById("supportText");
-            supportText.classList.toggle("visible"); // Переключает видимость текста
+            var copyMessage = document.getElementById("copyMessage");
+
+            // Переключает видимость текста и плавно открывает его
+            if (!supportText.classList.contains("visible")) {
+                supportText.classList.add("visible"); // Показываем рамку
+                copyMessage.style.display = "none"; // Скрываем сообщение
+            }
         }
 
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text) // Копируем текст в буфер обмена
                 .then(() => {
-                    alert("Цифры скопированы в буфер обмена!"); // Уведомление о копировании
+                    var copyMessage = document.getElementById("copyMessage");
+                    copyMessage.style.display = "block"; // Показываем сообщение
+                    setTimeout(() => {
+                        copyMessage.style.display = "none"; // Скрываем сообщение через 2 секунды
+                    }, 2000);
                 })
                 .catch(err => {
                     console.error("Ошибка копирования: ", err);
