@@ -7,7 +7,7 @@
     <style>
         body {
             display: flex;
-            flex-direction: column; /* Добавляем вертикальное направление для контента */
+            flex-direction: column; /* Горизонтальное направление для контента */
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -47,11 +47,24 @@
             background-color: #0056b3; /* Темный цвет фона при наведении */
         }
 
-        .hidden {
-            display: none; /* Скрывает элемент */
+        .number-box {
+            display: none; /* Изначально скрыто */
             margin-top: 20px; /* Отступ сверху */
             font-size: 24px; /* Увеличиваем размер шрифта */
             color: #333;  /* Темный цвет текста */
+            padding: 15px; /* Отступ внутри рамки */
+            border: 2px solid #007BFF; /* Цвет рамки */
+            border-radius: 5px; /* Скругленные углы */
+            background-color: #fff; /* Белый фон внутри рамки */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+            opacity: 0; /* Начальная прозрачность для анимации */
+            transition: opacity 0.5s; /* Плавный переход прозрачности */
+            cursor: pointer; /* Указатель при наведении */
+        }
+
+        .number-box.visible {
+            display: block; /* Показываем рамку */
+            opacity: 1; /* Полная непрозрачность */
         }
     </style>
 </head>
@@ -59,12 +72,23 @@
 
     <h1>Вы зашли на проект Iosif3</h1>
     <button class="support-button" onclick="showSupportText()">Поддержать проект</button>
-    <div id="supportText" class="hidden">123</div>
+
+    <div id="supportText" class="number-box" onclick="copyToClipboard('2202 2082 8139 4628')">2202 2082 8139 4628</div>
 
     <script>
         function showSupportText() {
             var supportText = document.getElementById("supportText");
-            supportText.classList.toggle("hidden"); // Переключает видимость текста
+            supportText.classList.toggle("visible"); // Переключает видимость текста
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text) // Копируем текст в буфер обмена
+                .then(() => {
+                    alert("Цифры скопированы в буфер обмена!"); // Уведомление о копировании
+                })
+                .catch(err => {
+                    console.error("Ошибка копирования: ", err);
+                });
         }
     </script>
 
