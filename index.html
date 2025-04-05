@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column; /* Добавляем вертикальное направление для контента */
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -29,11 +30,43 @@
                 transform: translateY(0); /* Без смещения */
             }
         }
+
+        .support-button {
+            padding: 15px 30px;  /* Отступы кнопки */
+            font-size: 18px;
+            color: white; /* Цвет текста */
+            background-color: #007BFF; /* Цвет фона кнопки */
+            border: none; /* Убираем стандартную рамку */
+            border-radius: 5px; /* Скругленные углы */
+            cursor: pointer; /* Указатель при наведении */
+            transition: background-color 0.3s; /* Плавный переход цвета фона */
+            margin-top: 20px; /* Отступ сверху */
+        }
+
+        .support-button:hover {
+            background-color: #0056b3; /* Темный цвет фона при наведении */
+        }
+
+        .hidden {
+            display: none; /* Скрывает элемент */
+            margin-top: 20px; /* Отступ сверху */
+            font-size: 24px; /* Увеличиваем размер шрифта */
+            color: #333;  /* Темный цвет текста */
+        }
     </style>
 </head>
 <body>
 
     <h1>Вы зашли на проект Iosif3</h1>
+    <button class="support-button" onclick="showSupportText()">Поддержать проект</button>
+    <div id="supportText" class="hidden">123</div>
+
+    <script>
+        function showSupportText() {
+            var supportText = document.getElementById("supportText");
+            supportText.classList.toggle("hidden"); // Переключает видимость текста
+        }
+    </script>
 
 </body>
 </html>
