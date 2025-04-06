@@ -1,4 +1,4 @@
-<div class="sidebar"  id="mySidebar>
+<div class="sidebar" id="mySidebar">
     <ul>
         <li><a href="marketapp.html">AppMarket</a></li>
         <li><a href="index.html">Поддержка проекта</a></li>
@@ -7,4 +7,13 @@
 </div>
 
 <button class="openbtn" onclick="openNav()">☰ Открыть сайдбар</button>
-<script src="sidebar.js"></script>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.left = "0"; // Показываем сайдбар
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.left = "-250px"; // Скрываем сайдбар
+    }
+</script>
