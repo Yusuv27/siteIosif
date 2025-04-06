@@ -40,10 +40,3 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error('Ошибка загрузки сайдбара:', error));
 });
-
-// Пример функции показа номера поддержки
-function showSupportText() {
-    var supportText = document.getElementById('supportText');
-    supportText.classList.toggle('visible'); // Переключение видимости
-}
-
