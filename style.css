@@ -6,39 +6,6 @@ body {
     background-color: white; /* Белый фон для всего тела */
 }
 
-/* Стили для блока поддержки */
-.number-box {
-    border: 2px solid black; /* Черная обводка */
-    border-radius: 10px; /* Скругленные углы */
-    padding: 15px; /* Отступы внутри */
-    background-color: #f9f9f9; /* Фоновый цвет для лучшего контраста */
-    text-align: center; /* Центрирование текста */
-    cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
-}
-
-.number-box:hover {
-    background-color: #e0e0e0; /* Цвет фона при наведении */
-    border-color: #007BFF; /* Цвет обводки при наведении на черный */
-}
-
-/* Стили для кнопки поддержки */
-.support-button {
-    background-color: black; /* Черный фон */
-    color: white; /* Белый текст */
-    border: none; /* Убираем стандартную рамку */
-    border-radius: 10px; /* Скругленные углы */
-    padding: 10px 20px; /* Отступы вокруг текста */
-    cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s; /* Плавный переход цвета фона */
-    font-size: 16px; /* Размер шрифта */
-}
-
-.support-button:hover {
-    background-color: #333; /* Темный цвет фона при наведении */
-}
-
-
 /* Стилизация сайдбара */
 .sidebar {
     width: 12%; /* Ширина сайдбара 12% от устройства */
@@ -85,51 +52,58 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Выравнивание по центру по горизонтали */
+    opacity: 0; /* Скрыть контент по умолчанию */
+    transition: opacity 0.5s ease; /* Плавный переход */
 }
 
-/* Стилизация таблицы продуктов */
-.product-table {
-    width: 100%; /* Ширина таблицы на 100% */
-    border-collapse: collapse; /* Убираем пробелы между ячейками */
-    margin-top: 20px; /* Отступ сверху */
+/* Показать контент */
+.content.visible {
+    opacity: 1; /* Сделать контент видимым */
 }
 
-.product-table td {
-    border: 1px solid #ddd; /* Рамка вокруг ячеек */
-    padding: 15px; /* Отступы внутри ячеек */
-    text-align: center; /* По центру текст внутри ячеек */
+/* Стилизация блока поддержки */
+.number-box {
+    border: 2px solid black; /* Черная обводка */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 15px; /* Отступы внутри */
+    background-color: #f9f9f9; /* Фоновый цвет для лучшего контраста */
+    text-align: center; /* Центрирование текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
+    display: none; /* Скрыть элемент по умолчанию, пока не вызвано */
 }
 
-.product {
-    background-color: #f9f9f9; /* Светлый фон для ячейки */
-    border-radius: 5px; /* Скругление углов */
+.number-box.visible {
+    display: block; /* Класс для показа элемента при необходимости */
 }
 
-.product h3 {
-    margin: 0; /* Убираем отступы */
+.number-box:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении */
+    border-color: #007BFF; /* Цвет обводки при наведении */
 }
 
-.product button {
-    margin-top: 10px; /* Отступ сверху для кнопки */
-    background-color: #007BFF; /* Цвет фона кнопки */
-    color: white; /* Цвет текста */
+/* Стили для кнопки поддержки */
+.support-button {
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
     border: none; /* Убираем стандартную рамку */
-    border-radius: 5px; /* Скругленные углы */
-    padding: 10px 15px; /* Отступы вокруг текста кнопки */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px 20px; /* Отступы вокруг текста */
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-size: 16px; /* Размер шрифта */
 }
 
-.product button:hover {
-    background-color: #0056b3; /* Темный цвет фона при наведении */
+.support-button:hover {
+    background-color: #333; /* Темный цвет фона при наведении */
 }
 
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
     .sidebar {
-        width: 100%; /* Ширина сайдбара 100% на мобильных устройствах */
+        width: 12%; /* Ширина сайдбара оставляем 12% */
         height: auto; /* Автоматическая высота для сайдбара */
-        position: relative; /* Позициоанирование относительное на мобильных */
+        position: relative; /* Позиционирование относительное на мобильных */
     }
 
     .content {
