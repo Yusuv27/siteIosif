@@ -124,6 +124,14 @@ h1 {
     background-color: #333; /* Темный цвет фона при наведении */
 }
 
+.button-container {
+    display: flex; /* Используем флексы для размещения кнопок */
+    flex-wrap: wrap; /* Перенос кнопок на следующую строку при необходимости */
+    justify-content: center; /* Центрирование кнопок по горизонтали */
+    gap: 10px; /* Пробел между кнопками */
+}
+
+
 /* Стили для кнопок покупки */
 .buy-button {
     background-color: black; /* Черный фон */
@@ -132,9 +140,10 @@ h1 {
     border-radius: 10px; /* Скругленные углы */
     padding: 10px 20px; /* Отступы вокруг текста */
     cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    transition: background-color 0.3s, transform 0.2s; /* Плавный переход */
     font-size: 16px; /* Размер шрифта */
-    display: inline-block; /* Сделать кнопку блочным элементом */
+    flex: 1 1 200px; /* Базовая ширина кнопки 200px, растягивается при необходимости */
+    max-width: 300px; /* Максимальная ширина кнопки */
     opacity: 0; /* Начальная непрозрачность */
     transform: translateY(20px); /* Начальное смещение вниз */
     animation: fadeInUp 0.5s forwards; /* Применение анимации */
