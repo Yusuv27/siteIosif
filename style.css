@@ -72,14 +72,20 @@ h1 {
 }
 
 
+/* Общие стили для body */
+body {
+    display: flex; /* Используем флексбокс для размещения основного контента и сайдбара */
+    font-family: Arial, sans-serif; /* Шрифт по умолчанию */
+}
+
 /* Стилизация сайдбара */
 .sidebar {
     width: 200px; /* Ширина сайдбара */
     background-color: #007BFF; /* Цвет фона сайдбара */
     color: white; /* Цвет текста */
     padding: 20px; /* Отступы внутри */
+    height: 100vh; /* Высота 100% */
     position: fixed; /* Зафиксировать сайдбар */
-    height: 100%; /* Высота 100% */
 }
 
 .sidebar h2 {
@@ -88,7 +94,7 @@ h1 {
 
 .sidebar ul {
     list-style: none; /* Убираем маркеры списка */
-    padding: 0;
+    padding: 0; /* Убираем отступы */
 }
 
 .sidebar ul li {
@@ -96,18 +102,60 @@ h1 {
 }
 
 .sidebar ul li a {
+    display: block; /* Сделать ссылку блочным элементом */
     color: white; /* Цвет ссылок */
     text-decoration: none; /* Убираем подчеркивание ссылок */
+    padding: 10px; /* Отступы внутри каждой ссылки */
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s; /* Плавный переход при наведении */
 }
 
 .sidebar ul li a:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    background-color: #0056b3; /* Темный цвет фона при наведении */
 }
 
 /* Основной контент смещен вправо */
 .content {
     margin-left: 220px; /* Отступ для сайдбара */
     padding: 20px; /* Отступы внутри */
+    flex-grow: 1; /* Занимает оставшееся пространство */
+}
+
+/* Стилизация таблицы продуктов */
+.product-table {
+    width: 100%; /* Ширина таблицы на 100% */
+    border-collapse: collapse; /* Убираем пробелы между ячейками */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.product-table td {
+    border: 1px solid #ddd; /* Рамка вокруг ячеек */
+    padding: 15px; /* Отступы внутри ячеек */
+    text-align: center; /* По центру текст внутри ячеек */
+}
+
+.product {
+    background-color: #f9f9f9; /* Светлый фон для ячейки */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.product h3 {
+    margin: 0; /* Убираем отступы */
+}
+
+.product button {
+    margin-top: 10px; /* Отступ сверху для кнопки */
+    background-color: #007BFF; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 5px; /* Скругленные углы */
+    padding: 10px 15px; /* Отступы вокруг текста кнопки */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.product button:hover {
+    background-color: #0056b3; /* Темный цвет фона при наведении */
 }
 
 
