@@ -4,13 +4,14 @@ body {
     margin: 0; /* Убираем отступы по умолчанию */
     height: 100vh; /* Высота экрана */
     background-color: white; /* Белый фон для всего тела */
+    color: black; /* Черный цвет текста для всего содержимого */
 }
 
 /* Стилизация сайдбара */
 .sidebar {
     width: 12%; /* Ширина сайдбара 12% от устройства */
     background-color: black; /* Цвет фона сайдбара - черный */
-    color: white; /* Цвет текста - белый */
+    color: white; /* Цвет текста в сайдбаре - белый */
     padding: 20px; /* Отступы внутри */
     height: 100%; /* Высота 100% */
     position: fixed; /* Зафиксировать сайдбар */
@@ -34,11 +35,12 @@ body {
 
 .sidebar ul li a {
     display: block; /* Оборачиваем ссылки в блочный элемент */
-    color: white; /* Цвет ссылок - белый */
+    color: white; /* Цвет ссылок в сайдбаре - белый */
     text-decoration: none; /* Убираем подчеркивание ссылок */
     padding: 10px; /* Отступы внутри каждой ссылки */
     border-radius: 5px; /* Скругленные углы */
     transition: background-color 0.3s; /* Плавный переход при наведении */
+    white-space: nowrap; /* Предотвращение переноса текста */
 }
 
 .sidebar ul li a:hover {
@@ -114,5 +116,6 @@ body {
 
     .sidebar ul li a {
         padding: 15px; /* Улучшаем размеры кнопок на мобильных */
+        white-space: nowrap; /* Предотвращение переноса текста */
     }
 }
