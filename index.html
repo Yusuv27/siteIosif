@@ -4,81 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проект Iosif</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column; /* Горизонтальное направление для контента */
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0; /* Светлый фон */
-            font-family: Arial, sans-serif; /* Шрифт */
-        }
-
-        h1 {
-            font-size: 48px;
-            color: #333; /* Темный цвет текста */
-            opacity: 0; /* Начальная непрозрачность */
-            transform: translateY(-50px); /* Начальное смещение */
-            animation: fadeInUp 1.5s forwards; /* Применение анимации */
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1; /* Полная непрозрачность */
-                transform: translateY(0); /* Без смещения */
-            }
-        }
-
-        .support-button {
-            padding: 15px 30px;  /* Отступы кнопки */
-            font-size: 18px;
-            color: white; /* Цвет текста */
-            background-color: #007BFF; /* Цвет фона кнопки */
-            border: none; /* Убираем стандартную рамку */
-            border-radius: 5px; /* Скругленные углы */
-            cursor: pointer; /* Указатель при наведении */
-            transition: background-color 0.3s, opacity 0.5s; /* Плавный переход цвета фона и прозрачности */
-            margin-top: 20px; /* Отступ сверху */
-            opacity: 0; /* Начальная непрозрачность */
-            animation: fadeInUp 0.5s forwards 1.5s; /* Анимация появления кнопки с задержкой */
-        }
-
-        .support-button:hover {
-            background-color: #0056b3; /* Темный цвет фона при наведении */
-        }
-
-        .number-box {
-            display: none; /* Изначально скрыто */
-            margin-top: 20px; /* Отступ сверху */
-            font-size: 24px; /* Увеличиваем размер шрифта */
-            color: #333;  /* Темный цвет текста */
-            padding: 15px; /* Отступ внутри рамки */
-            border: 2px solid #007BFF; /* Цвет рамки */
-            border-radius: 5px; /* Скругленные углы */
-            background-color: #fff; /* Белый фон внутри рамки */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
-            opacity: 0; /* Начальная прозрачность для анимации */
-            transition: opacity 0.5s ease, max-height 0.5s ease; /* Плавный переход прозрачности и высоты */
-            max-height: 0; /* Изначально высота 0 */
-            overflow: hidden; /* Скрываем переполнение */
-        }
-
-        .number-box.visible {
-            display: block; /* Показываем рамку */
-            opacity: 1; /* Полная непрозрачность */
-            max-height: 100px; /* Ограничиваем максимальную высоту для анимации */
-        }
-
-        .copy-message {
-            margin-top: 10px; /* Отступ сверху для сообщения */
-            font-size: 18px; /* Размер шрифта */
-            color: green; /* Цвет текста сообщения */
-            display: none; /* Изначально скрыто */
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS -->
 </head>
 <body>
 
@@ -88,34 +14,6 @@
     <div id="supportText" class="number-box" onclick="copyToClipboard('2202 2082 8139 4628')">2202 2082 8139 4628</div>
     <div id="copyMessage" class="copy-message">Скопировано успешно!</div>
 
-    <script>
-        function showSupportText() {
-            var supportText = document.getElementById("supportText");
-            var copyMessage = document.getElementById("copyMessage");
-
-            // Переключает видимость текста и плавно открывает его
-            if (!supportText.classList.contains("visible")) {
-                supportText.classList.add("visible"); // Показываем рамку
-                copyMessage.style.display = "none"; // Скрываем сообщение
-            } else {
-                supportText.classList.remove("visible"); // Прячем рамку, если она уже открыта
-            }
-        }
-
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text) // Копируем текст в буфер обмена
-                .then(() => {
-                    var copyMessage = document.getElementById("copyMessage");
-                    copyMessage.style.display = "block"; // Показываем сообщение
-                    setTimeout(() => {
-                        copyMessage.style.display = "none"; // Скрываем сообщение через 2 секунды
-                    }, 2000);
-                })
-                .catch(err => {
-                    console.error("Ошибка копирования: ", err);
-                });
-        }
-    </script>
-
+    <script src="script.js"></script> <!-- Подключение JavaScript -->
 </body>
 </html>
