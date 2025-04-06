@@ -3,8 +3,18 @@ body {
     display: flex; /* Используем флексбокс для размещения сайдбара и основного контента */
     margin: 0; /* Убираем отступы по умолчанию */
     height: 100vh; /* Высота экрана */
-    background-color: white; /* Белый фон для всего тела */
     color: black; /* Черный цвет текста для всего содержимого */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Светлый фон */
+    font-family: Arial, sans-serif; /* Шрифт */
+}
+h1 {
+    font-size: 48px;
+    color: #333; /* Темный цвет текста */
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(-50px); /* Начальное смещение */
+    animation: fadeInUp 1.5s forwards; /* Применение анимации */
 }
 
 /* Стили для ячеек продукта */
@@ -123,7 +133,12 @@ body {
     background-color: #45a049; /* Темный зеленый цвет фона при наведении */
     transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
 }
-
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Полная непрозрачность */
+        transform: translateY(0); /* Без смещения */
+       }
+}
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
     .sidebar {
