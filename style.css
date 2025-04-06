@@ -118,6 +118,10 @@ h1 {
     cursor: pointer; /* Указатель при наведении */
     transition: background-color 0.3s; /* Плавный переход цвета фона */
     font-size: 16px; /* Размер шрифта */
+    opacity: 0; /* Начальная непрозрачность */
+    transform: translateY(20px); /* Начальное смещение вниз */
+    animation: fadeInUp 0.5s forwards; /* Применение анимации */
+    animation-delay: var(--delay); /* Задержка для анимации */
 }
 
 .support-button:hover {
