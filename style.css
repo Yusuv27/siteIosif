@@ -70,3 +70,43 @@ h1 {
     color: green; /* Цвет текста сообщения */
     display: none; /* Изначально скрыто */
 }
+
+
+/* Стилизация сайдбара */
+.sidebar {
+    width: 200px; /* Ширина сайдбара */
+    background-color: #007BFF; /* Цвет фона сайдбара */
+    color: white; /* Цвет текста */
+    padding: 20px; /* Отступы внутри */
+    position: fixed; /* Зафиксировать сайдбар */
+    height: 100%; /* Высота 100% */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Отступы между элементами списка */
+}
+
+.sidebar ul li a {
+    color: white; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Основной контент смещен вправо */
+.content {
+    margin-left: 220px; /* Отступ для сайдбара */
+    padding: 20px; /* Отступы внутри */
+}
+
