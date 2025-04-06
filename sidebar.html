@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайдбар</title>
     <style>
         /* Стилизация сайдбара */
         .sidebar {
-            width: 250px;
+            width: 15%;
             background-color: black;
             color: white;
             padding: 20px;
@@ -71,26 +70,8 @@
         <li><a href="marketapp.html">AppMarket</a></li>
         <li><a href="index.html">Поддержка проекта</a></li>
     </ul>
-    <button class="closebtn" onclick="closeNav()">×</button>
 </div>
-<button class="openbtn" onclick="openNav()">☰ Открыть сайдбар</button>
 
-<script>
-    // Убедитесь, что функции находятся внутри события DOMContentLoaded
-    document.addEventListener("DOMContentLoaded", function() {
-        function openNav() {
-            document.getElementById("mySidebar").style.left = "0"; // Показываем сайдбар
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.left = "-250px"; // Скрываем сайдбар
-        }
-
-        // Привязываем функции к кнопкам
-        document.querySelector(".openbtn").addEventListener("click", openNav);
-        document.querySelector(".closebtn").addEventListener("click", closeNav);
-    });
-</script>
 
 </body>
 </html>
