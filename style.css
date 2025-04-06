@@ -78,7 +78,15 @@ h1 {
 .content.visible {
     opacity: 1; /* Сделать контент видимым */
 }
-
+.copy-message {
+    display: none; /* Сообщение скрыто по умолчанию */
+    background-color: #4CAF50; /* Зеленый фон */
+    color: white; /* Белый цвет текста */
+    padding: 15px; /* Отступы вокруг текста */
+    border-radius: 5px; /* Скругленные углы */
+    margin-top: 10px; /* Отступ сверху */
+    text-align: center; /* Центрирование текста */
+}
 /* Стилизация блока поддержки */
 .number-box {
     border: 2px solid black; /* Черная обводка */
