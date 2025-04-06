@@ -6,25 +6,6 @@ body {
     background-color: white; /* Белый фон для всего тела */
     color: black; /* Черный цвет текста для всего содержимого */
 }
-/* Стили для кнопок покупки */
-.buy-button {
-    background-color: #4CAF50; /* Зеленый фон */
-    color: white; /* Белый текст */
-    border: none; /* Убираем стандартную рамку */
-    border-radius: 10px; /* Скругленные углы */
-    padding: 10px 20px; /* Отступы вокруг текста */
-    cursor: pointer; /* Указатель при наведении */
-    transition: background-color 0.3s, transform 0.2s; /* Плавный переход */
-    font-size: 16px; /* Размер шрифта */
-    display: inline-block; /* Сделать кнопку блочным элементом */
-    width: 100%; /* Кнопка занимает всю ширину ячейки */
-}
-
-/* Эффект при наведении */
-.buy-button:hover {
-    background-color: #45a049; /* Темный зеленый цвет фона при наведении */
-    transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
-}
 
 /* Стили для ячеек продукта */
 .product {
@@ -123,6 +104,24 @@ body {
 
 .support-button:hover {
     background-color: #333; /* Темный цвет фона при наведении */
+}
+
+/* Стили для кнопок покупки */
+.buy-button {
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Эффект при наведении */
+.buy-button:hover {
+    background-color: #45a049; /* Темный зеленый цвет фона при наведении */
+    transform: scale(1.05); /* Немного увеличиваем кнопку при наведении */
 }
 
 /* Адаптивные стили для мобильных устройств */
