@@ -131,6 +131,7 @@ h1 {
     height: auto;
     margin-right: 10px; /* Отступ справа от изображения */
     object-fit: cover;
+    opacity: 0; /* Начальная непрозрачность */
     transform: translateY(20px); /* Начальное смещение вниз */
     animation: fadeInUp 0.5s forwards; /* Применение анимации */
     animation-delay: var(--delay);
