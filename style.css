@@ -129,6 +129,9 @@ h1 {
     border-radius: 50%; /* Округление изображения */
     margin-right: 10px; /* Отступ справа от изображения */
     object-fit: cover;
+    transform: translateY(20px); /* Начальное смещение вниз */
+    animation: fadeInUp 0.5s forwards; /* Применение анимации */
+    animation-delay: var(--delay);
 }
 /* Эффект при наведении */
 .buy-button:hover {
