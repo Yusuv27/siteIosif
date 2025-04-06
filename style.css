@@ -110,7 +110,12 @@ h1 {
     animation: fadeInUp 0.5s forwards; /* Применение анимации */
     animation-delay: var(--delay); /* Задержка для анимации */
 }
-
+.button-image {
+    width: 30px; /* Ширина изображения */
+    height: 30px; /* Высота изображения */
+    border-radius: 50%; /* Округление изображения */
+    margin-right: 10px; /* Отступ справа от изображения */
+}
 /* Эффект при наведении */
 .buy-button:hover {
     background-color: #45a049; /* Темный зеленый цвет фона при наведении */
