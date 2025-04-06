@@ -6,6 +6,39 @@ body {
     background-color: white; /* Белый фон для всего тела */
 }
 
+/* Стили для блока поддержки */
+.number-box {
+    border: 2px solid black; /* Черная обводка */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 15px; /* Отступы внутри */
+    background-color: #f9f9f9; /* Фоновый цвет для лучшего контраста */
+    text-align: center; /* Центрирование текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
+}
+
+.number-box:hover {
+    background-color: #e0e0e0; /* Цвет фона при наведении */
+    border-color: #007BFF; /* Цвет обводки при наведении на черный */
+}
+
+/* Стили для кнопки поддержки */
+.support-button {
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+    font-size: 16px; /* Размер шрифта */
+}
+
+.support-button:hover {
+    background-color: #333; /* Темный цвет фона при наведении */
+}
+
+
 /* Стилизация сайдбара */
 .sidebar {
     width: 12%; /* Ширина сайдбара 12% от устройства */
