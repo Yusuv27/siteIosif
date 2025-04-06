@@ -117,7 +117,7 @@ h1 {
 }
 
 .button-wrapper {
-    height: 200px;
+    height: 100px;
     display: flex; /* Используем flex для вертикального расположения изображения и кнопки */
     flex-direction: column; /* Располагаем содержимое в колонку */
     align-items: center; /* Центрируем содержимое по горизонтали */
