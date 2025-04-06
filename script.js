@@ -27,3 +27,23 @@ function copyToClipboard(text) {
         copyMessage.style.display = "none"; // Скрыть сообщение через 2 секунды
     }, 2000);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    var content = document.querySelector(".content");
+    content.classList.add("visible"); // Показать контент после загрузки страницы
+
+    // Функция для загрузки сайдбара
+    fetch('sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sidebar-container').innerHTML = data;
+        })
+        .catch(error => console.error('Ошибка загрузки сайдбара:', error));
+});
+
+// Пример функции показа номера поддержки
+function showSupportText() {
+    var supportText = document.getElementById('supportText');
+    supportText.classList.toggle('visible'); // Переключение видимости
+}
+
