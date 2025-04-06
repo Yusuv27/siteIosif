@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проект Iosif</title>
-    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключение общего стиля -->
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Меню</h2>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="marketapp.html">Магазин</a></li>
+            <li><a href="#">О проекте</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
 
-    <h1>Вы зашли на проект Iosif</h1>
-    <button class="support-button" onclick="showSupportText()">Поддержать проект</button>
+    <div class="content">
+        <h1>Вы зашли на проект Iosif</h1>
+        <button class="support-button" onclick="showSupportText()">Поддержать проект</button>
 
-    <div id="supportText" class="number-box" onclick="copyToClipboard('2202 2082 8139 4628')">2202 2082 8139 4628</div>
-    <div id="copyMessage" class="copy-message">Скопировано успешно!</div>
+        <div id="supportText" class="number-box" onclick="copyToClipboard('2202 2082 8139 4628')">2202 2082 8139 4628</div>
+        <div id="copyMessage" class="copy-message">Скопировано успешно!</div>
+    </div>
 
-    <script src="script.js"></script> <!-- Подключение JavaScript -->
+    <script src="script.js"></script> <!-- Подключение общего скрипта -->
 </body>
 </html>
